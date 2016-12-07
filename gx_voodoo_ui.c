@@ -64,6 +64,7 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor*   descriptor,
         ui->vkbox[i]   = NULL;
         ui->knob[i]    = NULL;
         ui->label[i]   = NULL;
+        ui->args[i]    = NULL;
     }
 
     *widget = NULL;
@@ -108,8 +109,8 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor*   descriptor,
     ui->args[0] = (struct gx_args*) malloc(sizeof(struct gx_args));
     ui->args[0]->ui = ui;
     ui->args[0]->port_index = (int)ATTACK;
-    g_signal_connect_data(G_OBJECT(ui->adj[0]), "value-changed",
-          G_CALLBACK(ref_value_changed),(gpointer*)ui->args[0], (GClosureNotify)free, G_CONNECT_AFTER);
+    g_signal_connect(G_OBJECT(ui->adj[0]), "value-changed",
+          G_CALLBACK(ref_value_changed),(gpointer*)ui->args[0]);
 
     ui->adj[1] = gtk_adjustment_new( 0.5, 0.0, 1.0, 0.01, 0.01*10.0, 0);
     ui->knob[1] = gtk_knob_new_with_adjustment(GTK_ADJUSTMENT(ui->adj[1]));
@@ -128,8 +129,8 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor*   descriptor,
     ui->args[1] = (struct gx_args*) malloc(sizeof(struct gx_args));
     ui->args[1]->ui = ui;
     ui->args[1]->port_index = (int)RESONACE;
-    g_signal_connect_data(G_OBJECT(ui->adj[1]), "value-changed",
-          G_CALLBACK(ref_value_changed),(gpointer*)ui->args[1], (GClosureNotify)free, G_CONNECT_AFTER);
+    g_signal_connect(G_OBJECT(ui->adj[1]), "value-changed",
+          G_CALLBACK(ref_value_changed),(gpointer*)ui->args[1]);
 
     ui->adj[2] = gtk_adjustment_new( 0.5, 0.0, 1.0, 0.01, 0.01*10.0, 0);
     ui->knob[2] = gtk_knob_new_with_adjustment(GTK_ADJUSTMENT(ui->adj[2]));
@@ -148,8 +149,8 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor*   descriptor,
     ui->args[2] = (struct gx_args*) malloc(sizeof(struct gx_args));
     ui->args[2]->ui = ui;
     ui->args[2]->port_index = (int)TONE;
-    g_signal_connect_data(G_OBJECT(ui->adj[2]), "value-changed",
-          G_CALLBACK(ref_value_changed),(gpointer*)ui->args[2], (GClosureNotify)free, G_CONNECT_AFTER);
+    g_signal_connect(G_OBJECT(ui->adj[2]), "value-changed",
+          G_CALLBACK(ref_value_changed),(gpointer*)ui->args[2]);
 
     ui->adj[3] = gtk_adjustment_new( 0.5, 0.0, 1, 0.01, 0.01*10.0, 0);
     ui->knob[3] = gtk_knob_new_with_adjustment(GTK_ADJUSTMENT(ui->adj[3]));
@@ -168,8 +169,8 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor*   descriptor,
     ui->args[3] = (struct gx_args*) malloc(sizeof(struct gx_args));
     ui->args[3]->ui = ui;
     ui->args[3]->port_index = (int)VOLUME;
-    g_signal_connect_data(G_OBJECT(ui->adj[3]), "value-changed",
-          G_CALLBACK(ref_value_changed),(gpointer*)ui->args[3], (GClosureNotify)free, G_CONNECT_AFTER);
+    g_signal_connect(G_OBJECT(ui->adj[3]), "value-changed",
+          G_CALLBACK(ref_value_changed),(gpointer*)ui->args[3]);
 
 
 
@@ -213,7 +214,7 @@ static void cleanup(LV2UI_Handle handle) {
             gtk_widget_destroy(ui->window);
         }
         for(int i = 0;i<4;i++) {
-            free(ui->args[i]);
+            if (ui->args[i] != NULL) free(ui->args[i]);
         }
         free(ui);
     }
