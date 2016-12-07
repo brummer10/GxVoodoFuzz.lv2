@@ -130,10 +130,10 @@ static void knob_expose(GtkWidget *widget, int knob_x, int knob_y, GdkEventExpos
 	cairo_arc(cr,knobx1+arc_offset, knoby1+arc_offset, knob_x/2.1, 0, 2 * M_PI );
 	cairo_pattern_t*pat =
 		cairo_pattern_create_radial (knobx1+arc_offset-knob_x/6,knoby1+arc_offset-knob_x/6, 1,knobx1+arc_offset,knoby1+arc_offset,knob_x/2.1 );
-		cairo_pattern_add_color_stop_rgb (pat, 0.5, 0.15, 0.15, 0.15);
-		cairo_pattern_add_color_stop_rgb (pat, 0.7, 0.2, 0.2, 0.2);
-		cairo_pattern_add_color_stop_rgb (pat, 0.9, 0.1, 0.1,0.1);
-		cairo_pattern_add_color_stop_rgb (pat, 1, 0.1, 0.1,0.1);
+		cairo_pattern_add_color_stop_rgb (pat, 0.5, 0.15, 0.2, 0.2);
+		cairo_pattern_add_color_stop_rgb (pat, 0.7, 0.2, 0.25, 0.25);
+		cairo_pattern_add_color_stop_rgb (pat, 0.9, 0.1, 0.15,0.15);
+		cairo_pattern_add_color_stop_rgb (pat, 1, 0.1, 0.15,0.15);
 	
 	cairo_set_source (cr, pat);
 	cairo_fill_preserve (cr);
@@ -144,9 +144,9 @@ static void knob_expose(GtkWidget *widget, int knob_x, int knob_y, GdkEventExpos
 	cairo_arc(cr,knobx1+arc_offset, knoby1+arc_offset, knob_x/3.1, 0, 2 * M_PI );
 	pat =
 		cairo_pattern_create_radial (knobx1+arc_offset-knob_x/6,knoby1+arc_offset-knob_x/6, 1,knobx1+arc_offset,knoby1+arc_offset,knob_x/2.1 );
-		cairo_pattern_add_color_stop_rgb (pat, 0, 0.1, 0.1, 0.1);
-		cairo_pattern_add_color_stop_rgb (pat, 0.7, 0.2, 0.2, 0.2);
-		cairo_pattern_add_color_stop_rgb (pat, 1, 0.1, 0.1,0.1);
+		cairo_pattern_add_color_stop_rgb (pat, 0, 0.1, 0.15, 0.15);
+		cairo_pattern_add_color_stop_rgb (pat, 0.7, 0.2, 0.25, 0.25);
+		cairo_pattern_add_color_stop_rgb (pat, 1, 0.1, 0.15,0.15);
 	
 	cairo_set_source (cr, pat);
 	cairo_fill_preserve (cr);
