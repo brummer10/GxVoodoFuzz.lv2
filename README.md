@@ -2,6 +2,7 @@
 simulation impressed by the Voodoo Lab (*) SuperFuzz pedal.
 It's basically a Bosstone circuite, followed by the tone control of the FoxToneMachine in parralel with a DarkBooster, finaly ended in a Volume control.
 
+![GxSaturator](https://github.com/brummer10/GxVoodooFuzz.lv2/raw/master/GxVoodooFuzz.png)
 
 
 (*) 'Other product names modeled in this software are trademarks of their respective companies that do not endorse and are not associated or affiliated with this simulation.

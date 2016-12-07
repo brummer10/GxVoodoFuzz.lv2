@@ -266,18 +266,18 @@ inline void Dsp::init(uint32_t samplingFreq)
 	fConst59 = ((fConst1 * (2.96233000867528e-13 + (fConst1 * (fConst49 - 5.54797019446372e-16)))) - 3.53991863558532e-13);
 	fConst60 = (fConst1 * ((fConst1 * (6.58826058480267e-17 - fConst51)) - 2.99167222995308e-17));
 	fConst61 = ((fConst1 * (2.19688509958529e-13 + (fConst1 * (fConst53 - 5.13531503747398e-16)))) - 9.97523243874022e-14);
-	fConst62 = (5.79187743718923e-19 * fConst1);
-	fConst63 = (fConst8 * (fConst62 - 1.31765211696053e-16));
-	fConst64 = (5.24744095809344e-19 * fConst1);
-	fConst65 = ((fConst8 * (1.0270630074948e-15 - fConst64)) - 1.99504648774804e-13);
-	fConst66 = (5.68982662042357e-19 * fConst1);
-	fConst67 = ((fConst8 * (1.10959403889274e-15 - fConst66)) - 7.07983727117064e-13);
+	fConst62 = (5.68982662042357e-19 * fConst1);
+	fConst63 = ((fConst8 * (1.10959403889274e-15 - fConst62)) - 7.07983727117064e-13);
+	fConst64 = (5.79187743718923e-19 * fConst1);
+	fConst65 = (fConst8 * (fConst64 - 1.31765211696053e-16));
+	fConst66 = (5.24744095809344e-19 * fConst1);
+	fConst67 = ((fConst8 * (1.0270630074948e-15 - fConst66)) - 1.99504648774804e-13);
 	fConst68 = (5.98334445990616e-17 - (8.68781615578384e-19 * fConst8));
 	fConst69 = ((7.87116143714016e-19 * fConst8) - 4.39377019917057e-13);
 	fConst70 = ((8.53473993063535e-19 * fConst8) - 5.92466001735056e-13);
-	fConst71 = (7.07983727117064e-13 + (fConst8 * (0 - (1.10959403889274e-15 + fConst66))));
-	fConst72 = (fConst8 * (1.31765211696053e-16 + fConst62));
-	fConst73 = (1.99504648774804e-13 + (fConst8 * (0 - (1.0270630074948e-15 + fConst64))));
+	fConst71 = (7.07983727117064e-13 + (fConst8 * (0 - (1.10959403889274e-15 + fConst62))));
+	fConst72 = (fConst8 * (1.31765211696053e-16 + fConst64));
+	fConst73 = (1.99504648774804e-13 + (fConst8 * (0 - (1.0270630074948e-15 + fConst66))));
 	fConst74 = (2.50854208255478e-18 * fConst1);
 	fConst75 = (6.3381511948018e-30 + fConst74);
 	fConst76 = (2.35802955760148e-19 * fConst1);
@@ -337,7 +337,7 @@ void always_inline Dsp::compute(int count, FAUSTFLOAT *input0, FAUSTFLOAT *outpu
 		fRec1[0] = (fRec2[0] - (((fRec1[1] * (8.7778312967401e-06 + (fConst8 * ((0 - (6.79262596084427e-10 * fRec0[0])) - 5.25634156552156e-10)))) + (fRec1[2] * (4.38891564837005e-06 + (fConst1 * (fConst7 + (fConst6 * fRec0[0])))))) / fTemp0));
 		fRec6[0] = ((0.993 * fRec6[1]) + fSlow2);
 		double fTemp4 = (9.97523243874022e-14 + (fConst1 * ((fRec6[0] * (fConst54 + (fConst52 * fRec6[0]))) + fConst50)));
-		fRec7[0] = (fRec2[0] - (((((fRec7[1] * (3.99009297549609e-13 + (fConst1 * ((fRec6[0] * (fConst73 + (fConst72 * fRec6[0]))) + fConst71)))) + (fRec7[2] * (5.98513946324413e-13 + (fConst8 * (fConst70 + (fRec6[0] * (fConst69 + (fConst68 * fRec6[0])))))))) + (fRec7[3] * (3.99009297549609e-13 + (fConst1 * (fConst67 + (fRec6[0] * (fConst65 + (fConst63 * fRec6[0])))))))) + (fRec7[4] * (9.97523243874022e-14 + (fConst1 * ((fRec6[0] * (fConst61 + (fConst60 * fRec6[0]))) + fConst59))))) / fTemp4));
+		fRec7[0] = (fRec2[0] - (((((fRec7[1] * (3.99009297549609e-13 + (fConst1 * ((fRec6[0] * (fConst73 + (fConst72 * fRec6[0]))) + fConst71)))) + (fRec7[2] * (5.98513946324413e-13 + (fConst8 * (fConst70 + (fRec6[0] * (fConst69 + (fConst68 * fRec6[0])))))))) + (fRec7[3] * (3.99009297549609e-13 + (fConst1 * ((fRec6[0] * (fConst67 + (fConst65 * fRec6[0]))) + fConst63))))) + (fRec7[4] * (9.97523243874022e-14 + (fConst1 * ((fRec6[0] * (fConst61 + (fConst60 * fRec6[0]))) + fConst59))))) / fTemp4));
 		double fTemp5 = ((((((fRec7[0] * (fConst82 + (fConst81 * fRec6[0]))) + (fConst1 * (fRec7[1] * (fConst80 + (fConst79 * fRec6[0]))))) + (fRec7[2] * (fConst78 + (fConst8 * (0 - (3.76281312383216e-18 * fRec6[0])))))) + (fConst1 * (fRec7[3] * (fConst77 + (fConst75 * fRec6[0]))))) + (fRec7[4] * (fConst58 + (fConst56 * fRec6[0])))) / fTemp4);
 		fVec2[0] = fTemp5;
 		output0[i] = (FAUSTFLOAT)(0.5 * ((fConst83 * (((0.75 * (((1.3333333333333333 * fVec2[1]) - (0.3333333333333333 * fVec2[2])) + (0.6666666666666666 * fVec2[0]))) + (0.55 * (((1.3333333333333333 * fVec2[2]) - (0.3333333333333333 * fVec2[3])) + (0.6666666666666666 * fVec2[1])))) + (0.25 * (((1.3333333333333333 * fVec2[3]) - (0.3333333333333333 * fVec2[4])) + (0.6666666666666666 * fVec2[2]))))) + (((fConst48 * fRec1[0]) + (fConst47 * fRec1[2])) / fTemp0)));
@@ -366,7 +366,7 @@ void always_inline Dsp::compute(int count, FAUSTFLOAT *input0, FAUSTFLOAT *outpu
 #undef fslider1
 #undef fslider2
 }
-		
+
 void __rt_func Dsp::compute_static(int count, FAUSTFLOAT *input0, FAUSTFLOAT *output0, PluginLV2 *p)
 {
 	static_cast<Dsp*>(p)->compute(count, input0, output0);
