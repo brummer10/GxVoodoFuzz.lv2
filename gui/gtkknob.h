@@ -21,8 +21,8 @@
  * ----------------------------------------------------------------------------
  */
 
-#ifndef __GTK_KNOB_H__
-#define __GTK_KNOB_H__
+#ifndef __GTK_VOODOO_KNOB_H__
+#define __GTK_VOODOO_KNOB_H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,21 +33,21 @@ extern "C" {
 
 G_BEGIN_DECLS
 
-#define GTK_TYPE_KNOB          (gtk_knob_get_type())
-#define GTK_KNOB(obj)          (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_KNOB, GtkKnob))
-#define GTK_IS_KNOB(obj)       (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_KNOB))
-#define GTK_KNOB_CLASS(klass)  (G_TYPE_CHECK_CLASS_CAST ((klass),  GTK_TYPE_KNOB, GtkKnobClass))
-#define GTK_IS_KNOB_CLASS(obj) (G_TYPE_CHECK_CLASS_TYPE ((klass),  GTK_TYPE_KNOB))
-#define GTK_KNOB_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_KNOB, GtkKnobClass))
+#define GTK_TYPE_VOODOO_KNOB          (gtk_knob_get_type())
+#define GTK_VOODOO_KNOB(obj)          (G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_VOODOO_KNOB, GtkVoodooKnob))
+#define GTK_IS_VOODOO_KNOB(obj)       (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_VOODOO_KNOB))
+#define GTK_VOODOO_KNOB_CLASS(klass)  (G_TYPE_CHECK_CLASS_CAST ((klass),  GTK_TYPE_VOODOO_KNOB, GtkVoodooKnobClass))
+#define GTK_IS_VOODOO_KNOB_CLASS(obj) (G_TYPE_CHECK_CLASS_TYPE ((klass),  GTK_TYPE_VOODOO_KNOB))
+#define GTK_VOODOO_KNOB_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_VOODOO_KNOB, GtkVoodooKnobClass))
 
-typedef struct _GtkKnob GtkKnob;
-typedef struct _GtkKnobClass GtkKnobClass;
+typedef struct _GtkVoodooKnob GtkVoodooKnob;
+typedef struct _GtkVoodooKnobClass GtkVoodooKnobClass;
 
-struct _GtkKnob {
+struct _GtkVoodooKnob {
 	GtkRange parent;
 };
 
-struct _GtkKnobClass {
+struct _GtkVoodooKnobClass {
 	GtkRangeClass parent_class;
 };
 
