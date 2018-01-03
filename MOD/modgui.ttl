@@ -20,8 +20,8 @@
             lv2:name "ATTACK" ;
         ] , [
             lv2:index 1 ;
-            lv2:symbol "RESONACE" ;
-            lv2:name "RESONACE" ;
+            lv2:symbol "RESONANCE" ;
+            lv2:name "RESONANCE" ;
         ] , [
             lv2:index 2 ;
             lv2:symbol "TONE" ;
