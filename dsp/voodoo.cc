@@ -380,7 +380,7 @@ void Dsp::connect(uint32_t port,void* data)
 	case ATTACK: 
 		fslider1_ = (float*)data; // , 0.5, 0.0, 1.0, 0.01 
 		break;
-	case RESONACE: 
+	case RESONANCE: 
 		fslider0_ = (float*)data; // , 0.5, 0.0, 1.0, 0.01 
 		break;
 	case TONE: 
@@ -413,7 +413,7 @@ void Dsp::del_instance(PluginLV2 *p)
 typedef enum
 {
    ATTACK, 
-   RESONACE, 
+   RESONANCE, 
    TONE, 
    VOLUME,
 } PortIndex;
