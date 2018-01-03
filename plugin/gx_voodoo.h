@@ -33,7 +33,7 @@ typedef enum
    EFFECTS_OUTPUT,
    EFFECTS_INPUT,
    ATTACK, 
-   RESONACE, 
+   RESONANCE, 
    TONE, 
    VOLUME,
 } PortIndex;
