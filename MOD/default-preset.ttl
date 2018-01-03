@@ -9,7 +9,7 @@
 		lv2:symbol "ATTACK" ;
 		pset:value 0.5
 	] , [
-		lv2:symbol "RESONACE" ;
+		lv2:symbol "RESONANCE" ;
 		pset:value 0.5
 	] , [
 		lv2:symbol "TONE" ;
