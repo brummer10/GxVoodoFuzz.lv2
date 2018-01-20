@@ -120,7 +120,7 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor*   descriptor,
 
     ui->adj[1] = gtk_adjustment_new( 0.5, 0.0, 1.0, 0.01, 0.01*10.0, 0);
     ui->knob[1] = gtk_knob_new_with_adjustment(GTK_ADJUSTMENT(ui->adj[1]));
-    ui->label[1] = gtk_label_new("RESONACE");
+    ui->label[1] = gtk_label_new("RESONANCE");
     ui->vkbox[1] = gtk_vbox_new(FALSE, 0);
 
     gtk_widget_modify_fg (ui->label[1], GTK_STATE_NORMAL, &color);
@@ -134,7 +134,7 @@ static LV2UI_Handle instantiate(const LV2UI_Descriptor*   descriptor,
     gtk_box_pack_start(GTK_BOX(ui->vkbox[1]), ui->label[1], FALSE, FALSE, 0);
     ui->args[1] = (struct gx_args*) malloc(sizeof(struct gx_args));
     ui->args[1]->ui = ui;
-    ui->args[1]->port_index = (int)RESONACE;
+    ui->args[1]->port_index = (int)RESONANCE;
     g_signal_connect(G_OBJECT(ui->adj[1]), "value-changed",
           G_CALLBACK(ref_value_changed),(gpointer*)ui->args[1]);
 
