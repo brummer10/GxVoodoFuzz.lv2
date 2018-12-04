@@ -206,10 +206,10 @@ static LV2UI_Handle instantiate(const struct _LV2UI_Descriptor * descriptor,
 	}
 
 	//ui->controls[0] = { 1.0, 1.0, 0.0, 1.0, 1.0, 50, 60, 61, 61, false,"POWER", BSWITCH, BYPASS};
-	ui->controls[0] = { 0.5, 0.5, 0.0, 1.0, 0.01, 30, 30, 81, 81, false,"ATTACK", KNOB, ATTACK};
-	ui->controls[1] = { 0.5, 0.5, 0.0, 1.0, 0.01, 110, 30, 81, 81, false,"RESONANCE", KNOB, RESONANCE};
-	ui->controls[2] = { 0.5, 0.5, 0.0, 1.0, 0.01, 190, 30, 81, 81, false,"TONE", KNOB, TONE};
-	ui->controls[3] = { 0.5, 0.5, 0.0, 1, 0.01, 270, 30, 81, 81, false,"VOLUME", KNOB, VOLUME};
+	ui->controls[0] = (gx_controller) {{ 0.5, 0.5, 0.0, 1.0, 0.01},{ 30, 30, 81, 81}, false,"ATTACK", KNOB, ATTACK};
+	ui->controls[1] = (gx_controller) {{ 0.5, 0.5, 0.0, 1.0, 0.01},{ 110, 30, 81, 81}, false,"RESONANCE", KNOB, RESONANCE};
+	ui->controls[2] = (gx_controller) {{ 0.5, 0.5, 0.0, 1.0, 0.01},{ 190, 30, 81, 81}, false,"TONE", KNOB, TONE};
+	ui->controls[3] = (gx_controller) {{ 0.5, 0.5, 0.0, 1, 0.01},  { 270, 30, 81, 81}, false,"VOLUME", KNOB, VOLUME};
 
 
 	ui->pedal = cairo_image_surface_create_from_stream(ui, LDVAR(pedal_png));
@@ -897,7 +897,6 @@ static const LV2UI_Descriptor descriptor = {
 	extension_data
 };
 
-extern "C"
 LV2_SYMBOL_EXPORT
 const LV2UI_Descriptor* lv2ui_descriptor(uint32_t index) {
 	switch (index) {
